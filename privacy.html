@@ -38,56 +38,75 @@
 </head>
 <body>
   <h1>SitShift Privacy Policy</h1>
-  <p class="updated">Effective July 8, 2026</p>
+  <p class="updated">Effective August 22, 2026 · <a href="#changes">what changed</a></p>
 
-  <p class="tldr">The short version: your wellness data — moves, check-ins, streaks, coins —
-  lives on your device and is never uploaded. An account is optional, and the only things that
-  may ever leave your phone are anonymous crash reports and anonymous usage statistics that
-  help us fix bugs and improve the app. No ads. No selling or sharing of data. Ever.</p>
+  <p class="tldr">The short version: you can use SitShift without ever telling us who you are.
+  Your movement progress — moves completed, check-ins, streaks — syncs to a private cloud space
+  under a random anonymous ID (or your email, if you choose to create an account) so a new phone
+  doesn't mean starting over. Your most personal entries — journal, body measurements, progress
+  photos — never leave your phone, and are encrypted on it. No ads. No selling or sharing of
+  data. You can delete everything, in the app, anytime.</p>
 
-  <h2>What stays on your device</h2>
-  <p>SitShift keeps a local record of your activity so it can work: which micro-exercises you
-  complete, your daily check-ins (energy and sleep ratings, and any note or journal entry you
-  write), your streak, XP, SitCoins, achievements, and the preferences you set (such as your
-  work hours, nudge interval, and an optional first name and age band used to personalize
-  suggestions).</p>
-  <p><strong>All of this stays in your phone's local storage.</strong> It is never uploaded to
-  us or anyone else. We run no servers holding your wellness data and have no way to see it.</p>
+  <h2>Where your data lives</h2>
+  <p>SitShift handles two kinds of data very differently.</p>
 
-  <h2>Accounts are optional</h2>
-  <p>You can use everything in SitShift as a guest. If you choose to create an account, the
-  current version stores it on your device only: your email address is kept locally and your
-  password is stored only as a salted, one-way hash — it is not sent to us. If a future version
-  adds online sync or backup, it will be opt-in, and this policy will be updated first.</p>
+  <p><strong>On your phone only — never uploaded.</strong> Your journal entries ("Reflect &amp;
+  plan"), body measurements and progress photos, your body-tension map, focus-sprint history,
+  desk-audit results, and the app's learned sense of when nudges work best for you. None of this
+  is ever sent anywhere. Journal entries, body measurements, and body-map entries are
+  additionally encrypted at rest on your device, so even someone with a copy of your phone's raw
+  storage can't read them.</p>
 
-  <h2>What may leave your device — and what never does</h2>
+  <p><strong>Synced to your private cloud space.</strong> So your progress survives losing or
+  switching phones, the app stores the following in a database only your signed-in account can
+  read or write (enforced on the server, not just in the app):</p>
+  <ul>
+    <li><strong>Your profile:</strong> an optional first name and age, your preferences (work
+    hours, nudge pace, and your onboarding answers such as goal and focus areas), and your
+    progress — streak, XP, SitCoins, achievements.</li>
+    <li><strong>Daily activity logs:</strong> which micro-moves you completed each day, your
+    energy and sleep check-in ratings, and any short check-in note you write.</li>
+  </ul>
+  <p>This data is hosted for us by Google Firebase on servers in the European Union (Belgium)
+  and is encrypted in transit and at rest. SitShift works fully offline; changes sync when
+  you're back online.</p>
+
+  <h2>Anonymous by default — accounts optional</h2>
+  <p>When you first use SitShift, the app creates an <strong>anonymous account</strong>: a
+  random identifier with no name, email, or anything else about you attached. You can use every
+  feature this way, indefinitely.</p>
+  <p>If you later choose to create an account, your email address and a password are added to
+  it (handled by Firebase Authentication — your password is never visible to us), and your
+  existing progress carries over. An account exists so you can sign back in after switching
+  phones; it is never required.</p>
+
+  <h2>Crash reports and usage statistics</h2>
   <p>To keep SitShift working well, the app may send two kinds of anonymous technical data:</p>
   <ul>
     <li><strong>Crash reports</strong> (processed by Sentry): if the app crashes, we receive
     the technical error trace along with your device model, operating system version, and app
-    version, tied to a random identifier. This tells us what broke so we can fix it.</li>
+    version, tied to a random identifier.</li>
     <li><strong>Usage statistics</strong> (processed by PostHog): anonymous counts of feature
-    use — for example that <em>a</em> move was completed, a daily goal was reached, or a
-    notification was tapped — tied to a random install identifier.</li>
+    use — for example that <em>a</em> move was completed or a notification was tapped — tied
+    to a random install identifier.</li>
   </ul>
   <p><strong>Never included in either:</strong> your name, email, check-in notes or ratings,
-  journal entries, or anything you type. The random identifiers are not linked to your
-  identity — we couldn't connect them to you even if asked. Both services act as our data
-  processors and are contractually barred from using this data for anything else.</p>
+  journal entries, measurements, photos, or anything you type. These identifiers are separate
+  from your account and not linked to your identity.</p>
 
   <h2>What SitShift does not do</h2>
   <ul>
     <li>No advertising and no ad identifiers.</li>
-    <li>No selling or sharing of data with third parties for their own use.</li>
-    <li>No access to your contacts, location, camera, microphone, or health records.</li>
-    <li>No uploading of your wellness data — moves, check-ins, notes, journal, streaks —
-    anywhere.</li>
+    <li>No selling of your data, and no sharing with third parties for their own use — our
+    service providers (below) may only process data on our instructions.</li>
+    <li>No tracking of you across other apps or websites.</li>
+    <li>No access to your contacts, location, microphone, or health records. The camera is used
+    only if you choose to take progress photos — and those photos never leave your device.</li>
   </ul>
 
   <h2>Purchases</h2>
   <p>If you buy SitShift Premium, the payment is handled entirely by the App Store or Google
-  Play. We never see or store your card details; we only record on your device that Premium
-  is active.</p>
+  Play. We never see or store your card details.</p>
 
   <h2>Notifications</h2>
   <p>If you allow notifications, SitShift schedules movement reminders directly on your
@@ -96,20 +115,32 @@
   your system settings.</p>
 
   <h2>Deleting your data</h2>
-  <p>You can delete your account and all associated data anytime from
-  <em>More → Delete account &amp; data</em> — deletion is permanent. Because your wellness
-  data lives on your device, deleting the app also deletes all of it. Crash reports and
-  usage statistics are anonymous, cannot be traced back to you, and are retained only as
-  long as needed to improve the app. If you'd like the records associated with your random
-  identifier removed anyway, email us and we'll handle it.</p>
+  <p>You can delete your account and all associated data anytime from <em>More → Delete
+  account &amp; data</em>. This permanently removes your cloud data (profile and daily logs),
+  your account record, and everything stored on the device. There is no waiting period and no
+  way to undo it. Step-by-step instructions are on our
+  <a href="./delete-account.html">account deletion page</a>.</p>
+  <p>One honest caveat: if you uninstall the app <em>without</em> deleting your account first,
+  the data in your cloud space is not automatically removed. For anonymous accounts it sits
+  under a random ID that identifies no one; for email accounts, contact us from that email and
+  we'll delete it server-side. You can also email us anytime to request a copy or deletion of
+  the data associated with your account.</p>
+
+  <h2>Service providers</h2>
+  <p>We use Google Firebase (authentication and database hosting, EU region), Sentry (crash
+  reporting), and PostHog (anonymous usage statistics). Each acts as our data processor and is
+  contractually barred from using the data for anything else.</p>
 
   <h2>Children</h2>
   <p>SitShift is designed for working adults and is not directed at children under 13.</p>
 
-  <h2>Changes to this policy</h2>
-  <p>If a future version of SitShift ever adds an online feature (for example, optional
-  account backup), this policy will be updated first, the change will be clearly announced
-  in the app, and any such feature will be opt-in.</p>
+  <h2 id="changes">Changes to this policy</h2>
+  <p><strong>August 22, 2026:</strong> as promised in the previous version of this policy,
+  we updated it before launching online features. SitShift now syncs your progress and daily
+  activity to a private cloud space (anonymous by default), instead of keeping everything
+  device-local. Journal, body measurements, and photos remain on-device only, and are now
+  encrypted at rest. Any future change of this kind will be reflected here first, with the
+  effective date above.</p>
 
   <h2>Contact</h2>
   <p>Questions? Email <a href="mailto:developer@ayahq.com">developer@ayahq.com</a>.</p>
