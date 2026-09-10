@@ -45,8 +45,10 @@
   up, your health profile (height, weight, sex and goal) sync to a private cloud space under a
   random anonymous ID (or your email, if you choose to create an account) so a new phone
   doesn't mean starting over. Your most personal entries — journal, weight history, body
-  measurements, progress photos — never leave your phone, and are encrypted on it. No ads. No
-  selling or sharing of data. You can delete everything, in the app, anytime.</p>
+  measurements, progress photos — never leave your phone, and are encrypted on it. If you
+  install the optional desk companion in your browser, it uses the same account under the same
+  rules, and a calendar you connect there stays in your browser. No ads. No selling or sharing
+  of data. You can delete everything, in the app, anytime.</p>
 
   <h2>Where your data lives</h2>
   <p>SitShift handles two kinds of data very differently.</p>
@@ -90,6 +92,17 @@
     data, or anything kept on your phone. Anyone with the six-character code can join. You can
     leave at any time, which removes your presence; the last member to leave closes the pod.
     Deleting your account leaves your pod first.</li>
+    <li><strong>Your desk companion (optional):</strong> if you install SitShift Desk in your
+    browser and sign in there, it reads the parts of your profile it needs to nudge you the way
+    the app does (your first name, your nudge settings, your energy-dip and hydration answers,
+    your work setup, your streak and level, and which pod you are in), today's activity log,
+    and your pod's presence. It writes three things to your cloud space: the moves you do at the
+    desk (added to your daily activity log, marked as done at the desk), your pod presence for
+    the day, and &mdash; roughly every ten minutes while you are at the desk with its nudges on
+    &mdash; a short note that the desk companion is active, with the day and the hours it
+    nudges, so your phone can stay quiet during those hours. That note records nothing about
+    what you are doing, when you are idle, or anything on your screen. See "The desk
+    companion" below for what stays in your browser.</li>
   </ul>
   <p>This data is hosted for us by Google Firebase on servers in the European Union (Belgium)
   and is encrypted in transit and at rest. SitShift works fully offline; changes sync when
@@ -139,10 +152,41 @@
   notification service of ours is involved. You can turn them off anytime in the app or in
   your system settings.</p>
 
+  <h2 id="desk">The desk companion (browser extension)</h2>
+  <p>SitShift Desk is an optional extension for Chrome and browsers built on it. It keeps a
+  sitting clock while you work, nudges you with a browser notification, plays one-minute
+  resets you can do in your chair, and can work around your meetings. Installing it is your
+  choice; the app does everything it does without it.</p>
+  <p><strong>Signing in.</strong> The desk companion signs in with the email and password of a
+  SitShift account, so it needs an email account rather than an anonymous one. Signed in, it
+  reads and writes only what is listed under "Where your data lives" above, under the same
+  server-enforced rule: only your account can read or write your space.</p>
+  <p><strong>Your calendar, if you connect one, stays in your browser.</strong> You can let the
+  desk companion see when you are busy so it never nudges mid-meeting. Two ways: read-only
+  access to your Google Calendar through your browser's Google account (the list of your
+  calendars, and the start time, end time and title of events in the next two days), or a
+  calendar link you paste, which the extension fetches about every 30 minutes &mdash; the
+  browser asks once for permission to reach that address. What it fetches is kept only in the
+  extension's own storage in your browser, is used only to decide when not to nudge, and shows
+  only in the extension's own popup. It is never sent to your cloud space or to us. Disconnect
+  the calendar in the extension's settings and it is deleted.</p>
+  <p><strong>Also in your browser only:</strong> your desk nudge settings, the sitting clock,
+  today's moves, and the extension's learned sense of which hours nudges work for you. To
+  know when you are away from the desk, the extension uses your browser's idle signal (no
+  input for five minutes, or a locked screen) &mdash; a yes or no that is kept in the browser
+  and never synced. Reset in the extension's settings, or uninstalling it, removes all of this.
+  Deleting your SitShift account removes the parts that synced.</p>
+  <p><strong>What it cannot see.</strong> The desk companion has no access to the pages you
+  visit, your browsing history, your tabs, or anything you type. Its browser permissions are
+  alarms (the clock), notifications (the nudge), storage (its own settings), idle (are you at
+  the desk), and Google sign-in (only if you connect Google Calendar). It sends no crash
+  reports and no usage statistics.</p>
+
   <h2>Deleting your data</h2>
   <p>You can delete your account and all associated data anytime from <em>More → Delete
-  account &amp; data</em>. This permanently removes your cloud data (profile and daily logs),
-  your account record, and everything stored on the device. There is no waiting period and no
+  account &amp; data</em>. This permanently removes your cloud data (profile, daily logs, pod
+  presence and the desk companion's note), your account record, and everything stored on the
+  device. There is no waiting period and no
   way to undo it. Step-by-step instructions are on our
   <a href="./delete-account.html">account deletion page</a>.</p>
   <p>One honest caveat: if you uninstall the app <em>without</em> deleting your account first,
@@ -160,6 +204,14 @@
   <p>SitShift is designed for working adults and is not directed at children under 13.</p>
 
   <h2 id="changes">Changes to this policy</h2>
+  <p><strong>September 10, 2026 (desk companion):</strong> SitShift gained an optional browser
+  extension, SitShift Desk, described in its own section above. It signs in with your SitShift
+  account, reads the parts of your profile and today's log it needs, and writes the moves you
+  do at the desk, your pod presence, and &mdash; while you are at the desk with its nudges on
+  &mdash; a short note of the hours it is nudging, so your phone stays quiet during them. A
+  calendar you connect to it stays in your browser and is never uploaded. Separately, pod
+  invites now come as a link to a page on this site (join.html) that shows the code and opens
+  the app; that page reads the code from the link and stores nothing.</p>
   <p><strong>September 10, 2026 (health data):</strong> SitShift can now read your step count
   and sleep from your phone &mdash; Health Connect on Android, motion data on iPhone &mdash; but
   only if you connect it under More &rsaquo; Health data, and only to pre-fill your daily
