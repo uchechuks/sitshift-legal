@@ -1,0 +1,21 @@
+name: Legal pages check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Legal pages check
+    runs-on: ubuntu-latest
+    steps:
+      # SHA-pinned: tag = v6.1.0 (same as the secret scan)
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      # Draft mode until the pages are reviewed and published. When they are,
+      # switch to: node scripts/check.mjs --published
+      - name: Check the pages
+        run: node scripts/check.mjs

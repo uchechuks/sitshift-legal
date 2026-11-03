@@ -6,10 +6,10 @@
 <!-- The one page on this site with a script: it reads the invite code from
      the address and puts it on the button that opens the app. No network,
      no storage, nothing leaves the page. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex">
-<title>Join a SitShift pod</title>
+<title>SitShift pods aren't available</title>
 <style>
   :root { color-scheme: light dark; }
   body {
@@ -54,37 +54,10 @@
 </style>
 </head>
 <body>
-<h1>You're invited to a SitShift pod</h1>
-<p>A pod is two to eight people who each move once an hour. The pod keeps the day when at least half of you do. No scores, no ranking — just who moved today.</p>
-
-<p class="muted" id="no-code" hidden>This link is missing its code. Ask whoever invited you to send it again.</p>
-
-<div id="with-code" hidden>
-  <p>Your pod code</p>
-  <div class="code" id="code" aria-label="Pod code"></div>
-  <p><a class="btn" id="open" href="#">Open in SitShift</a></p>
-  <p class="muted">Have SitShift? Tap the button and you land on the join screen with the code filled in. Or open SitShift and go to <strong>More → Your pod → Join with a code</strong>.</p>
-</div>
-
-<h2>Don't have SitShift yet?</h2>
-<p>SitShift is a phone app that helps desk workers move more with 60-second micro-exercises and gentle nudges. It's in early access — ask whoever invited you how to get it, then come back to this link.</p>
-
-<p class="muted"><a href="./index.html">SitShift — Legal</a> · <a href="./privacy.html">Privacy Policy</a></p>
-
-<script>
-  // The code from ?code=… (or /join.html#ABCD23), checked against the code
-  // alphabet the app uses: capitals and digits, never 0, O, 1 or I.
-  (function () {
-    var m = (location.search + location.hash).match(/[?&#]code=([A-Za-z0-9]+)/) || location.hash.match(/^#([A-Za-z0-9]{6})$/);
-    var raw = m ? m[1].toUpperCase() : "";
-    var ok = raw.length === 6 && /^[ABCDEFGHJKLMNPQRSTUVWXYZ23456789]{6}$/.test(raw);
-    document.getElementById("no-code").hidden = ok;
-    document.getElementById("with-code").hidden = !ok;
-    if (!ok) return;
-    document.getElementById("code").textContent = raw;
-    document.getElementById("open").setAttribute("href", "sitshift://pod?code=" + raw);
-    document.title = "Join a SitShift pod · " + raw;
-  })();
-</script>
+<h1>Pods aren't available right now</h1>
+<p>This link is an invitation to a SitShift pod, a small group that moved together in an earlier version of the app. Pods aren't part of the current version of SitShift, so there's nothing to join.</p>
+<p>SitShift is now a home fitness app: safety first, programs that adapt to how each session goes, and no gym needed.</p>
+<p class="muted">Already used pods? Your old pod data is still covered by the <a href="./privacy.html">Privacy Policy</a>, and deleting your account removes it (<a href="./delete-account.html">how to delete</a>).</p>
+<p class="muted"><a href="./index.html">SitShift: legal and privacy</a></p>
 </body>
 </html>
