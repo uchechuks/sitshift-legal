@@ -1,5 +1,5 @@
 {
-  "note": "What privacy.html must name, taken from the SitShift app's in-app data map (data/dataMap.js) at app commit 45eba9f (PR H1, #75). When the app's data map changes, update this list in the same release. Matching is case-insensitive.",
+  "note": "What privacy.html must name, taken from the SitShift app's in-app data map (data/dataMap.js) at app commit 45eba9f (PR H1, #75). When the app's data map changes, update this list in the same release. Matching is case-insensitive. The legal review's high-priority fixes (H1-H5) added the web, consent, US-only and agreement phrases; keep them.",
   "app_commit": "45eba9f",
   "privacy": [
     "Safety answers",
@@ -33,7 +33,11 @@
     "desk companion",
     "Download your data",
     "Delete account &amp; data",
-    "18 and over"
+    "18 and over",
+    "offered only in the United States",
+    "On the web version",
+    "not protected by encryption on your device",
+    "the app asks you before anything is sent"
   ],
   "consumer-health-data": [
     "Safety answers",
@@ -41,7 +45,10 @@
     "Pregnancy and postpartum",
     "Health profile",
     "Ask the Coach",
-    "We don't sell consumer health data"
+    "We don't sell consumer health data",
+    "Consent to collect",
+    "Consent to share",
+    "offered only in the United States"
   ],
   "terms": [
     "18 or older",
@@ -52,6 +59,9 @@
     "Cancelling",
     "Refunds",
     "When Premium ends",
-    "Ask the Coach"
+    "Ask the Coach",
+    "How you agree",
+    "ask you to agree again",
+    "offered only in the United States"
   ]
 }

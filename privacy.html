@@ -43,6 +43,7 @@
     margin-bottom: 24px;
   }
   a { color: #2563eb; }
+  .todo { background: rgba(180, 83, 9, 0.15); padding: 0 4px; border-radius: 4px; }
 </style>
 </head>
 <body>
@@ -53,13 +54,16 @@
 
   <p class="tldr">The short version: SitShift is a home fitness app, and the most personal things you tell it stay on your phone. Your safety answers, starting checks, programs, workout notes, and any pregnancy or joint settings are kept only on your device, encrypted. Your profile, settings and daily progress sync to a private cloud space so a new phone doesn't mean starting over. You can start as a guest with no email. No ads, no selling or sharing of your data, no tracking across apps. You can download or delete everything in the app, any time.</p>
 
-  <p>This policy explains what SitShift (an app by AYA HQ, "we") collects, why, where it's kept, who else handles it, and your choices. It covers the SitShift mobile app and its web version. If you also live in a US state with a consumer health data law, our <a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> applies too.</p>
+  <p>This policy explains what SitShift collects, why, where it's kept, who else handles it, and your choices. SitShift is provided by <span class="todo">[legal name of the business]</span>, trading as AYA HQ ("AYA HQ", "we", "us"), <span class="todo">[postal address]</span>. This policy covers the SitShift apps for iPhone and Android and the SitShift web version; where the web version works differently, this policy says so. If you also live in a US state with a consumer health data law, our <a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a> applies too.</p>
+
+  <h2 id="offered">Where SitShift is offered</h2>
+  <p>SitShift is offered only in the United States. It isn't listed in the App Store or Google Play in other countries, and it isn't directed at people in the European Union, the United Kingdom or Switzerland. If you use it from somewhere else, US law and this policy apply, and the protections of your local law may not.</p>
 
   <h2 id="where">Where your data lives</h2>
   <p>SitShift keeps different kinds of data in different places on purpose. The app shows the same list under <strong>Profile → Your data, where it lives</strong>.</p>
 
   <h3>Only on your phone, encrypted</h3>
-  <p>Sealed with a key held in your phone's secure storage. Never uploaded, not even to your own cloud space:</p>
+  <p>On iPhone and Android, sealed with a key held in your phone's secure storage. Never uploaded, not even to your own cloud space. (On the web version, see <a href="#web">below</a>.)</p>
   <ul>
     <li><strong>Safety answers</strong>: your answers to the safety questions, the areas you asked us to go easy on, and the date you confirmed a clinician's OK.</li>
     <li><strong>Your starting point and plan</strong>: what you told us you can do comfortably, your equipment and schedule, your check results and the plan they recommended (with the reasons), and the optional gender answer, which only changes the order of workout collections and programs.</li>
@@ -76,6 +80,9 @@
   <h3>Only on your phone</h3>
   <p>Small conveniences: your daily walk goal, saved moves and preferred instructor, how sessions felt (which sets the next one's difficulty), personal bests, the guided first week, your home training plan if you have one, <strong>reminder backoff</strong> (how many workout reminders in a row went unanswered), <strong>subscription prompts</strong> you answered "Not now", the Ask the Coach daily counter, and, if you created an account, a salted hash of your password for signing in offline (never the password itself). Plus data from features in older versions (care paths, desk plans, the desk setup check), only if you used them.</p>
 
+  <h3 id="web">On the web version</h3>
+  <p>The web version keeps the same things in your browser instead of on a phone, and still never uploads them. But a browser has no secure storage for the key, so <strong>on the web version your health and safety answers are not protected by encryption on your device</strong>: anyone who can use your browser profile, or software running in it, could read them. If you use the web version on a shared or work computer, don't enter health information, or delete your data when you're done (Profile → Delete account &amp; data). For the full protection described above, use the iPhone or Android app.</p>
+
   <h3>Synced to your private cloud space</h3>
   <p>So your progress survives losing or switching phones, these are stored in a database that only your signed-in account can read or write (enforced on the server, not just in the app):</p>
   <ul>
@@ -91,11 +98,12 @@
   <p>When you first open SitShift, it creates a guest account: a random identifier with nothing about you attached. You can use every feature this way. If you choose to create an account, your email address and a password are added (handled by Firebase Authentication; we never see your password), so you can sign back in on another phone.</p>
 
   <h2 id="health">Health and safety information</h2>
-  <p>SitShift asks about your health only to keep training safe and to fit it to you: the safety questions (which can show a referral to a doctor instead of a workout), the starting checks, and your reports after each session (how it felt, any discomfort or warning sign). These answers stay on your phone, encrypted, and are used only by the app on your phone: to choose safe moves, adjust your program, pause it and point you to professional help when you report a warning sign, and show your progress. They are never sold, never used for advertising, and never included in crash reports or usage statistics.</p>
+  <p><strong>We ask before we collect it.</strong> Before SitShift asks any health question, the app shows a separate consent screen that explains what it will ask, why, and where the answers stay, and links this policy and our <a href="consumer-health-data.html">Consumer Health Data Privacy Policy</a>. Nothing is collected unless you agree. You can withdraw consent at any time by deleting your answers or your account.</p>
+  <p>SitShift asks about your health only to keep training safe and to fit it to you: the safety questions (which can show a referral to a doctor instead of a workout), the starting checks, and your reports after each session (how it felt, any discomfort or warning sign). These answers stay on your phone (encrypted on iPhone and Android) and are used only by the app on your phone: to choose safe moves, adjust your program, pause it and point you to professional help when you report a warning sign, and show your progress. They are never sold, never used for advertising, and never included in crash reports or usage statistics.</p>
   <p>SitShift gives general fitness guidance. It isn't medical advice, it doesn't diagnose, and nothing it does is based on your weight, a photo or AI alone.</p>
 
   <h2 id="coach">Ask the Coach</h2>
-  <p>Ask the Coach suggests a short routine for an ache you describe. When its AI is switched on, what you type is sent to SitShift's coach service, which asks Claude, a model made by Anthropic, for a safe routine from our approved moves and sends it back. We don't store or log what you typed: the coach service keeps only the time and whether the request worked. Anthropic processes the text to produce the answer under its terms for business customers. If you have Pregnancy &amp; Postpartum mode on, or no connection, the answer comes from the app on your phone and nothing is sent. Don't include your name or other identifying details in what you type.</p>
+  <p>Ask the Coach suggests a short routine for an ache you describe. When its AI is switched on, what you type is sent to SitShift's coach service, which asks Claude, a model made by Anthropic, for a safe routine from our approved moves and sends it back. <strong>The first time, the app asks you before anything is sent</strong>, and you can choose the offline coach instead, which keeps everything on your phone. We don't store or log what you typed: the coach service keeps only the time and whether the request worked. Anthropic processes the text only to produce the answer, as our service provider, under a contract that limits it to providing the service to us. If you have Pregnancy &amp; Postpartum mode on, or no connection, the answer comes from the app on your phone and nothing is sent. Don't include your name or other identifying details in what you type.</p>
 
   <h2 id="notifications">Notifications</h2>
   <p>If you allow notifications, SitShift schedules workout reminders on your phone, at the times, days and quiet hours you choose. Scheduling happens entirely on your device. Reminder previews never show health information: they say things like "Your next session is ready". Reminders that keep going unanswered come less often, then pause. You can turn them off in the app or in your phone's settings.</p>
@@ -143,13 +151,13 @@
   <p>SitShift is for people 18 and over. The app doesn't create accounts for anyone younger, and we don't knowingly collect data from anyone under 18. If you believe someone under 18 has used SitShift, email us and we'll delete their data.</p>
 
   <h2 id="security">Security</h2>
-  <p>Health and safety answers are encrypted on your phone with a key in its secure storage. Data in transit is encrypted, and the cloud space is locked so only your account can reach it. No system is perfectly secure; if something goes wrong that affects your data, we'll tell you as the law requires.</p>
+  <p>On iPhone and Android, health and safety answers are encrypted on your phone with a key in its secure storage. On the web version they aren't encrypted on your device (see <a href="#web">On the web version</a>). Data in transit is encrypted, and the cloud space is locked so only your account can reach it. No system is perfectly secure; if something goes wrong that affects your data, we'll tell you as the law requires.</p>
 
   <h2 id="changes">Changes to this policy</h2>
   <p><strong>This version (home fitness):</strong> SitShift became a home fitness app. This policy now describes the safety questions and starting checks, programs and the workout log, Pregnancy &amp; Postpartum and Joint-friendly modes, Ask the Coach and its AI, workout reminders, subscriptions, and downloading your data. All of the new health information stays on your phone. Features from earlier versions that aren't in this one (the desk companion browser extension, pods, Fuel nutrition, and reading steps and sleep from your phone) are no longer described, except that deleting your account still removes any data they left behind.</p>
   <p>When we change this policy we'll update it here first, with the effective date at the top, and tell you in the app if the change matters.</p>
 
   <h2 id="contact">Contact</h2>
-  <p>Questions or requests: <a href="mailto:developer@ayahq.com">developer@ayahq.com</a>.</p>
+  <p>Questions or requests: <a href="mailto:developer@ayahq.com">developer@ayahq.com</a>, or write to <span class="todo">[legal name of the business]</span>, <span class="todo">[postal address]</span>.</p>
 </body>
 </html>
