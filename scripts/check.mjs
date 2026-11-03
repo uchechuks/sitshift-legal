@@ -10,12 +10,15 @@
 // (data/required-disclosures.json). Exits 1 with a list of problems.
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
-import { join, dirname } from "node:path";
+import { join, dirname, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const published = process.argv.includes("--published");
-const pages = readdirSync(ROOT).filter((f) => f.endsWith(".html"));
+// Root pages, plus earlier versions kept in archive/ (each must say it no
+// longer applies, and keeps the same CSP and working links).
+const ARCHIVE = existsSync(join(ROOT, "archive")) ? readdirSync(join(ROOT, "archive")).filter((f) => f.endsWith(".html")).map((f) => `archive/${f}`) : [];
+const pages = [...readdirSync(ROOT).filter((f) => f.endsWith(".html")), ...ARCHIVE];
 const required = JSON.parse(readFileSync(join(ROOT, "data", "required-disclosures.json"), "utf8"));
 // Pages that aren't part of the policy set (the pod invite page opens the app).
 const NOT_POLICY = new Set(["join.html"]);
@@ -27,7 +30,10 @@ const ids = (html) => new Set([...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m
 for (const f of pages) {
   const html = text[f];
   if (!/Content-Security-Policy" content="default-src 'none'/.test(html)) problems.push(`${f}: the locked-down CSP is missing`);
-  if (!NOT_POLICY.has(f)) {
+  if (f.startsWith("archive/")) {
+    if (!/id="archived"/.test(html)) problems.push(`${f}: an archived version must say it no longer applies`);
+    if (!/name="robots" content="noindex"/.test(html)) problems.push(`${f}: an archived version must not be indexed`);
+  } else if (!NOT_POLICY.has(f)) {
     const banner = /class="draft"/.test(html);
     if (!published && !banner) problems.push(`${f}: the draft banner is missing (draft mode)`);
     if (published && banner) problems.push(`${f}: the draft banner is still there (published mode)`);
@@ -38,8 +44,9 @@ for (const f of pages) {
     const href = m[1];
     if (/^(https?:|mailto:)/.test(href)) continue;
     const [file, anchor] = href.split("#");
-    const target = file || f;
-    if (file && !existsSync(join(ROOT, file))) { problems.push(`${f}: link to a missing page ${href}`); continue; }
+    // Resolve against the linking page's folder (archive pages link "../").
+    const target = file ? normalize(join(dirname(f), file)).split("\\").join("/") : f;
+    if (file && !existsSync(join(ROOT, target))) { problems.push(`${f}: link to a missing page ${href}`); continue; }
     if (anchor && text[target] && !ids(text[target]).has(anchor)) problems.push(`${f}: link to a missing anchor ${href}`);
   }
 }
@@ -55,4 +62,4 @@ if (problems.length) {
   console.error(`${problems.length} problem(s):\n- ${problems.join("\n- ")}`);
   process.exit(1);
 }
-console.log(`OK: ${pages.length} pages, ${published ? "published" : "draft"} mode.`);
+console.log(`OK: ${pages.length - ARCHIVE.length} pages and ${ARCHIVE.length} archived, ${published ? "published" : "draft"} mode.`);

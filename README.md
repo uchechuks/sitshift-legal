@@ -9,7 +9,8 @@ The SitShift legal and privacy pages, published with GitHub Pages at https://uch
 | `consumer-health-data.html` | Consumer Health Data Privacy Policy (US state health-data laws) |
 | `terms.html` | Terms of Service, including subscriptions |
 | `delete-account.html` | How to delete an account (the stores require this URL) |
-| `join.html` | The pod invite page. Pods are off in the current app, so it's not linked from the index. |
+| `join.html` | Where old pod invite links land: it says pods aren't available in this version. Not linked from the index. |
+| `archive/` | Earlier versions (`<page>-<effective date>.html`), each marked as no longer in effect and not indexed. |
 
 ## Before publishing a change
 
@@ -29,5 +30,6 @@ The SitShift legal and privacy pages, published with GitHub Pages at https://uch
    - set the effective date;
    - fill any `[to be decided]` placeholder;
    - add a line under "Changes to this policy";
+   - copy the version being replaced into `archive/` (from `main`, with the "Earlier version" note and `noindex`) and link it from the page's changes line and the index;
    - run `node scripts/check.mjs --published`, which must pass;
    - switch the CI step to `--published`, then merge.
