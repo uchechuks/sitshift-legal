@@ -1,5 +1,5 @@
 {
-  "note": "What privacy.html must name, taken from the SitShift app's in-app data map (data/dataMap.js) at app commit 975de95 (the legal-consent PR, #76). When the app's data map changes, update this list in the same release. Matching is case-insensitive. The legal review's high-priority fixes (H1-H5) added the web, consent, US-only and agreement phrases; keep them.",
+  "note": "What privacy.html must name, taken from the SitShift app's in-app data map (data/dataMap.js) at app commit 975de95 (the legal-consent PR, #76). When the app's data map changes, update this list in the same release. Matching is case-insensitive. The legal review's high-priority fixes (H1-H5) added the web, consent, US-only and agreement phrases; keep them. The medium-priority fixes (M1-M11) added the California, verification, deletion, risk, liability and general-clause phrases; keep them.",
   "app_commit": "975de95",
   "privacy": [
     "Safety answers",
@@ -38,7 +38,13 @@
     "On the web version",
     "not protected by encryption on your device",
     "the app asks you before anything is sent",
-    "your agreements"
+    "your agreements",
+    "For California residents",
+    "Do Not Track",
+    "Global Privacy Control",
+    "authorized agent",
+    "we verify every request",
+    "haven't in the past 12 months"
   ],
   "consumer-health-data": [
     "Safety answers",
@@ -49,7 +55,10 @@
     "We don't sell consumer health data",
     "Consent to collect",
     "Consent to share",
-    "offered only in the United States"
+    "offered only in the United States",
+    "within 45 days of verifying the request",
+    "archives or backups",
+    "authorized agent"
   ],
   "terms": [
     "18 or older",
@@ -63,6 +72,11 @@
     "Ask the Coach",
     "How you agree",
     "ask you to agree again",
-    "offered only in the United States"
+    "offered only in the United States",
+    "voluntarily accept the risk",
+    "our total liability",
+    "Ending your use",
+    "can't be enforced",
+    "third-party beneficiaries"
   ]
 }

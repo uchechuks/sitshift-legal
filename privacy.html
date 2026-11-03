@@ -43,6 +43,19 @@
     margin-bottom: 24px;
   }
   a { color: #2563eb; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { border: 1px solid rgba(100, 116, 139, 0.35); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: rgba(100, 116, 139, 0.12); }
+  .table-wrap { overflow-x: auto; }
+  @media (max-width: 560px) {
+    table, tbody, tr, td { display: block; width: 100%; box-sizing: border-box; }
+    tr:first-child { display: none; }
+    tr { border: 1px solid rgba(100, 116, 139, 0.35); border-radius: 8px; margin: 0 0 12px; padding: 4px 0; }
+    td { border: none; padding: 4px 10px; }
+    td::before { content: attr(data-label); display: block; font-weight: 600; font-size: 12px; color: #64748b; }
+    td:first-child { font-weight: 700; }
+    td:first-child::before { display: none; }
+  }
   .todo { background: rgba(180, 83, 9, 0.15); padding: 0 4px; border-radius: 4px; }
 </style>
 </head>
@@ -103,7 +116,7 @@
   <p>SitShift gives general fitness guidance. It isn't medical advice, it doesn't diagnose, and nothing it does is based on your weight, a photo or AI alone.</p>
 
   <h2 id="coach">Ask the Coach</h2>
-  <p>Ask the Coach suggests a short routine for an ache you describe. When its AI is switched on, what you type is sent to SitShift's coach service, which asks Claude, a model made by Anthropic, for a safe routine from our approved moves and sends it back. <strong>The first time, the app asks you before anything is sent</strong>, and you can choose the offline coach instead, which keeps everything on your phone. We don't store or log what you typed: the coach service keeps only the time and whether the request worked. Anthropic processes the text only to produce the answer, as our service provider, under a contract that limits it to providing the service to us. If you have Pregnancy &amp; Postpartum mode on, or no connection, the answer comes from the app on your phone and nothing is sent. Don't include your name or other identifying details in what you type.</p>
+  <p>Ask the Coach suggests a short routine for an ache you describe. When its AI is switched on, what you type is sent to SitShift's coach service, which asks Claude, a model made by Anthropic, for a safe routine from our approved moves and sends it back. <strong>The first time, the app asks you before anything is sent</strong>, and you can choose the offline coach instead, which keeps everything on your phone. We don't store or log what you typed: the coach service keeps only the time and whether the request worked. Anthropic processes the text only to produce the answer, as our service provider, under a contract that limits it to providing the service to us. It doesn't use it to train its models, and it keeps it for <span class="todo">[Anthropic's retention period for API inputs and outputs, from our agreement with them]</span>. If you have Pregnancy &amp; Postpartum mode on, or no connection, the answer comes from the app on your phone and nothing is sent. Don't include your name or other identifying details in what you type.</p>
 
   <h2 id="notifications">Notifications</h2>
   <p>If you allow notifications, SitShift schedules workout reminders on your phone, at the times, days and quiet hours you choose. Scheduling happens entirely on your device. Reminder previews never show health information: they say things like "Your next session is ready". Reminders that keep going unanswered come less often, then pause. You can turn them off in the app or in your phone's settings.</p>
@@ -123,12 +136,28 @@
   <ul>
     <li>No advertising and no ad identifiers.</li>
     <li>No selling of your personal data, and no sharing of it for targeted advertising.</li>
-    <li>No tracking of you across other apps or websites.</li>
+    <li>No tracking of you across other apps or websites. Because of that, SitShift doesn't respond differently to browser Do Not Track signals: there's no tracking to turn off. We don't sell or share personal information, so a Global Privacy Control signal has nothing to opt you out of; if that ever changed, we'd honor it.</li>
     <li>No access to your location, contacts or microphone. The camera is used only if you choose to take progress photos, and those stay on your phone.</li>
   </ul>
 
   <h2 id="providers">Who else handles data</h2>
   <p>These service providers process data only on our instructions, for the purposes above: Google Firebase (accounts and the cloud space, EU), the App Store and Google Play (purchases), Render (hosting the coach service), Anthropic (the coach's AI, for what you type in Ask the Coach), and, only if we switch them on, Sentry and PostHog. We may disclose information if the law requires it, or to protect someone's safety.</p>
+
+  <h2 id="california">For California residents</h2>
+  <p>This section gives the details California law asks for. It applies to everyone, wherever you live.</p>
+  <p><strong>We don't sell or share personal information</strong> (including for cross-context behavioral advertising), and we haven't in the past 12 months. We don't knowingly sell or share the personal information of anyone under 16. We use sensitive personal information only to provide the app you asked for, never to infer things about you, so there's nothing to limit; we'd tell you first if that ever changed.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Category (California law)</th><th>What it is in SitShift</th><th>Source and purpose</th><th>Who receives it</th><th>How long we keep it</th></tr>
+    <tr><td data-label="Category">Identifiers</td><td data-label="What it is in SitShift">A random account identifier; your email address if you create an account</td><td data-label="Source and purpose">From you and the app; to run your account and sync it</td><td data-label="Who receives it">Google Firebase (service provider)</td><td data-label="How long we keep it">Until you delete your account</td></tr>
+    <tr><td data-label="Category">Personal records</td><td data-label="What it is in SitShift">An optional first name; your email address</td><td data-label="Source and purpose">From you; to greet you and sign you in</td><td data-label="Who receives it">Google Firebase</td><td data-label="How long we keep it">Until you delete your account</td></tr>
+    <tr><td data-label="Category">Characteristics</td><td data-label="What it is in SitShift">Your age; sex in the optional health profile. The optional gender answer and pregnancy settings stay on your phone</td><td data-label="Source and purpose">From you; for the 18+ check and to set your targets</td><td data-label="Who receives it">Google Firebase (age and health profile only)</td><td data-label="How long we keep it">Until you delete them or your account</td></tr>
+    <tr><td data-label="Category">Commercial information</td><td data-label="What it is in SitShift">Your Premium plan, when it started and renews or ends, and whether it's a trial</td><td data-label="Source and purpose">From the App Store or Google Play; to give you access</td><td data-label="Who receives it">Google Firebase</td><td data-label="How long we keep it">Until you delete your account</td></tr>
+    <tr><td data-label="Category"><strong>Sensitive:</strong> health information</td><td data-label="What it is in SitShift">The optional health profile and the sessions you complete (synced); what you type in Ask the Coach (sent, not kept). Your safety answers, session reports and body data stay on your phone and we never receive them</td><td data-label="Source and purpose">From you; to keep training safe, fit it to you and show progress</td><td data-label="Who receives it">Google Firebase; the coach service host (Render) and Anthropic for Ask the Coach</td><td data-label="How long we keep it">Synced data: until you delete it or your account. Ask the Coach text: not kept by us; Anthropic: <span class="todo">[Anthropic's retention period for API inputs and outputs, from our agreement with them]</span></td></tr>
+    <tr><td data-label="Category"><strong>Sensitive:</strong> account log-in</td><td data-label="What it is in SitShift">Your email address and password (the password is handled by Firebase Authentication; we never see it)</td><td data-label="Source and purpose">From you; to sign you in</td><td data-label="Who receives it">Google Firebase</td><td data-label="How long we keep it">Until you delete your account</td></tr>
+    <tr><td data-label="Category">Internet or other electronic activity</td><td data-label="What it is in SitShift">The time and outcome of each Ask the Coach request (no content)</td><td data-label="Source and purpose">From the app; to run and protect the service</td><td data-label="Who receives it">Render</td><td data-label="How long we keep it"><span class="todo">[30 days: confirm the log retention set in Render]</span></td></tr>
+    <tr><td data-label="Category">Inferences</td><td data-label="What it is in SitShift">The starting plan recommended from your answers, on your phone only</td><td data-label="Source and purpose">Made on your phone; to suggest a plan</td><td data-label="Who receives it">No one</td><td data-label="How long we keep it">Until you delete it</td></tr>
+  </table></div>
+  <p>We don't collect precise location, biometric information, audio, contacts, government identifiers or financial account details. Your rights and how to use them are under <a href="#rights">Your choices and rights</a>.</p>
 
   <h2 id="rights">Your choices and rights</h2>
   <ul>
@@ -137,13 +166,15 @@
     <li><strong>Delete it</strong>: Profile → Delete account &amp; data erases your cloud space, your account and everything on the phone, immediately. See the <a href="delete-account.html">account deletion page</a>.</li>
     <li><strong>Stop reminders</strong> in the app or your phone's settings.</li>
   </ul>
-  <p>Depending on where you live, you may have legal rights to know, access, correct or delete your personal data, to get a copy, and to opt out of its sale or use for targeted advertising (we do neither). To use them, use the app or email us at <a href="mailto:developer@ayahq.com">developer@ayahq.com</a>. We'll respond within 45 days. If we decline a request, we'll say why, and you can appeal by replying to that email; if you're still not satisfied, you can contact your state's attorney general. We won't treat you differently for using your rights.</p>
+  <p>Depending on where you live, you may have legal rights to know, access, correct or delete your personal data, to get a copy, and to opt out of its sale or use for targeted advertising (we do neither). To use them, use the app or email us at <a href="mailto:developer@ayahq.com">developer@ayahq.com</a>. <strong>So no one else can use your rights against you, we verify every request:</strong> for an email account, by asking you to write from that account's address, or to confirm the request in the app; for a guest account, which has no email, by doing it in the app, since only the phone holding it can. We ask only for what we need to verify you, and use it only for that. You can also use an <strong>authorized agent</strong>: send us your signed permission for them, and we may still ask you to confirm your identity with us directly. We'll respond within 45 days, and if we need longer (up to 45 more days, where the law allows), we'll tell you why. If we decline a request, we'll say why, and you can appeal by replying to that email; if you're still not satisfied, you can contact your state's attorney general. We won't treat you differently for using your rights.</p>
 
   <h2 id="retention">How long we keep data</h2>
   <ul>
     <li>Data in your cloud space: for as long as your account exists, until you delete it.</li>
     <li>Data on your phone: until you delete it, delete your account, or uninstall the app.</li>
-    <li>Coach requests: not stored by us. Server logs keep only the time and outcome of a request, for our host's standard log period.</li>
+    <li>Coach requests: what you typed isn't stored by us. Our server logs keep only the time and outcome of each request, for <span class="todo">[30 days: confirm the log retention set in Render]</span>, then they're deleted. Anthropic keeps the text for <span class="todo">[Anthropic's retention period for API inputs and outputs, from our agreement with them]</span>.</li>
+    <li>Subscription status: as part of your profile, until you delete your account. Apple and Google keep their own purchase records under their policies.</li>
+    <li>Requests you email us and our replies: for 24 months, so we can show we handled them, then deleted.</li>
     <li>If you uninstall without deleting your account, your cloud data isn't removed automatically. For a guest account it sits under a random identifier that identifies no one; for an email account, email us from that address and we'll delete it.</li>
   </ul>
 
@@ -151,7 +182,7 @@
   <p>SitShift is for people 18 and over. The app doesn't create accounts for anyone younger, and we don't knowingly collect data from anyone under 18. If you believe someone under 18 has used SitShift, email us and we'll delete their data.</p>
 
   <h2 id="security">Security</h2>
-  <p>On iPhone and Android, health and safety answers are encrypted on your phone with a key in its secure storage. On the web version they aren't encrypted on your device (see <a href="#web">On the web version</a>). Data in transit is encrypted, and the cloud space is locked so only your account can reach it. No system is perfectly secure; if something goes wrong that affects your data, we'll tell you as the law requires.</p>
+  <p>On iPhone and Android, health and safety answers are encrypted on your phone with a key in its secure storage. On the web version they aren't encrypted on your device (see <a href="#web">On the web version</a>). Data in transit is encrypted, and the cloud space is locked so only your account can reach it, enforced by rules on the server. Only the people who build and run SitShift can reach our systems, with their own accounts and two-step sign-in <span class="todo">[confirm two-step sign-in is on for every Firebase, Render, GitHub and Anthropic account]</span>. Secrets such as the AI key stay on our server, never in the app. We review security whenever we change how data is stored or sent, and we keep a written plan for responding to incidents. No system is perfectly secure; if something goes wrong that affects your data, we'll tell you as the law requires.</p>
 
   <h2 id="changes">Changes to this policy</h2>
   <p><strong>This version (home fitness):</strong> SitShift became a home fitness app. This policy now describes the safety questions and starting checks, programs and the workout log, Pregnancy &amp; Postpartum and Joint-friendly modes, Ask the Coach and its AI, workout reminders, subscriptions, and downloading your data. All of the new health information stays on your phone. Features from earlier versions that aren't in this one (the desk companion browser extension, pods, Fuel nutrition, and reading steps and sleep from your phone) are no longer described, except that deleting your account still removes any data they left behind.</p>
